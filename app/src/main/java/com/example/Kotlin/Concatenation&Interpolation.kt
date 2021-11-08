@@ -1,13 +1,13 @@
 package com.example.Kotlin
 
 fun main(args: Array<String>){
-    var sayed: String = "Musfiqr Rahman"
+    val sayed = "Musfiqr Rahman"
 
     println("My name is: "+sayed)
 
-    val apples: Int = 6
-    val oranges: Int = 5
-    var fruit: Int = apples - oranges
+    val apples = 6
+    val oranges = 5
+    val fruit = apples - oranges
     println(fruit)
     println("A Quater of The Apples is ${apples/4}")
 }
