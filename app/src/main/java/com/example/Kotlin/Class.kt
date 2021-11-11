@@ -12,16 +12,23 @@ fun main(args: Array<String>){
     val sakib = Player("Sakib", 5, 10, 1000)
     sakib.show()
 
-    println(sakib.weapon.name.toUpperCase())
-    println(sakib.weapon.damageInflicted)
+    /*println(sakib.weapon.name.toUpperCase())
+    println(sakib.weapon.damageInflicted)*/
 
-    val axe = Weapon("Axe", 12)
-    sayed.weapon = axe
-    println(sayed.weapon.name)
-    println(axe.name)
+//    val axe = Weapon("Axe", 12)
+//    sayed.weapon = axe
+//    println(sayed.weapon.name)
+//    println(axe.name)
+//
+//    axe.damageInflicted = 24
+//    println(axe.damageInflicted)
 
-    axe.damageInflicted = 24
-    println(axe.damageInflicted)
+    val redPotion = Loot("Red Potion", LootType.POTION, 7.50)
+    sakib.inventory.add(redPotion)
+    sakib.showInventory()
+
+
+    println(sakib.toString())
 
 
 
