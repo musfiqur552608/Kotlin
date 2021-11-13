@@ -1,5 +1,7 @@
 package com.example.Kotlin
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 
 //class Player(val name: String) {
@@ -10,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class Player(val name:String, var lives:Int, var level:Int, var score:Int)
 {
     var weapon: Weapon = Weapon("Fist", 1)
-    val inventory = ArrayList<Loot>()
+    private val inventory = ArrayList<Loot>()
 
     fun show(){
         /*println("""
@@ -37,6 +39,23 @@ class Player(val name:String, var lives:Int, var level:Int, var score:Int)
             weapon: ${weapon}
             
         """
+    }
+
+    fun getLoot(item: Loot){
+        inventory.add(item)
+    }
+
+    fun dropLoot(item:Loot): Boolean{
+        return if (inventory.contains(item)){
+            inventory.remove(item)
+            true
+        }else false
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun dropLoot(name: String):Boolean{
+        println("$name will be dropped")
+        return inventory.removeIf { it.name==name }
     }
 
     fun showInventory(){
