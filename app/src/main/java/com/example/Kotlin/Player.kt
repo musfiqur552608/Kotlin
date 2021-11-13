@@ -12,7 +12,6 @@ class Player(val name:String, var lives:Int, var level:Int, var score:Int)
     var weapon: Weapon = Weapon("Fist", 1)
     val inventory = ArrayList<Loot>()
 
-
     fun show(){
         /*println("""
             name: $name
@@ -35,14 +34,17 @@ class Player(val name:String, var lives:Int, var level:Int, var score:Int)
             lives: $lives
             level: $level
             score: $score
-            weapon: ${weapon.name}
-            damage: ${weapon.damageInflicted}
+            weapon: ${weapon}
+            
         """
     }
 
     fun showInventory(){
         println("$name's Inventory")
-        println(inventory.get(0))
+        for (item in inventory){
+            println(item)
+        }
+        //println(inventory.get(0))
         println("=========================")
     }
 
